@@ -1,0 +1,92 @@
+﻿@model ProductCatalog.Models.Product
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Add Product</title>
+</head>
+
+<body>
+
+    <h2>ADD NEW PRODUCT</h2>
+
+    @using (Html.BeginForm())
+    {
+        <table>
+
+            <tr>
+                <td>
+                    Product Name
+                </td>
+
+                <td>
+                    @Html.TextBoxFor(model => model.ProductName)
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    Category
+                </td>
+
+                <td>
+                    @Html.TextBoxFor(model => model.Category)
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    Price
+                </td>
+
+                <td>
+                    @Html.TextBoxFor(model => model.Price)
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    Quantity
+                </td>
+
+                <td>
+                    @Html.TextBoxFor(model => model.Quantity)
+                </td>
+            </tr>
+
+            <tr>
+                <td valign="top">
+                    Description
+                </td>
+
+                <td>
+                    @Html.TextAreaFor(
+                        model => model.Description,
+                        5,
+                        30,
+                        null
+                    )
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                </td>
+
+                <td>
+                    <input type="submit" value="Add Product" />
+                </td>
+            </tr>
+
+        </table>
+    }
+
+    <br />
+
+    <a href="@Url.Action("Index", "Product")">
+        Back to Product Catalog
+    </a>
+
+</body>
+</html>
